@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZHEBST | E-Book Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #111, #333);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 550px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .hero button {
+            margin-top: 25px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: #111;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        /* BOOKS */
+        .books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .book {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .book:hover {
+            transform: translateY(-6px);
+        }
+
+        .cover {
+            height: 280px;
+            background: linear-gradient(135deg, #222, #555);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cover h3 {
+            font-size: 25px;
+        }
+
+        .book-info {
+            padding: 20px;
+        }
+
+        .book-info p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .buy {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #111;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .buy:hover {
+            background: #333;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: auto;
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                padding: 15px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">ZHEBST</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#books">E-Books</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div>
+            <h1>ZHEBST</h1>
+
+            <p>
+                Discover stories, knowledge, and ideas
+                through premium digital books.
+            </p>
+
+            <button onclick="document.getElementById('books').scrollIntoView()">
+                EXPLORE E-BOOKS
+            </button>
+        </div>
+    </section>
+
+
+    <!-- EBOOKS -->
+    <section class="section" id="books">
+
+        <h2>Featured E-Books</h2>
+
+        <div class="books">
+
+            <!-- BOOK 1 -->
+            <div class="book">
+
+                <div class="cover">
+                    <h3>
+                        THE<br>
+                        LAST<br>
+                        STAR
+                    </h3>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Last Star</h3>
+
+                    <p>
+                        A mysterious journey through
+                        space, science, and the unknown.
+                    </p>
+
+                    <div class="price">
+                        Rp25.000
+                    </div>
+
+                    <button class="buy"
+                        onclick="buyBook('The Last Star')">
+                        BUY NOW
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- BOOK 2 -->
+            <div class="book">
+
+                <div class="cover">
+                    <h3>
+                        BEYOND<br>
+                        PHYSICS
+                    </h3>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Beyond Physics</h3>
+
+                    <p>
+                        Explore the fascinating world
+                        of physics through adventure.
+                    </p>
+
+                    <div class="price">
+                        Rp30.000
+                    </div>
+
+                    <button class="buy"
+                        onclick="buyBook('Beyond Physics')">
+                        BUY NOW
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- BOOK 3 -->
+            <div class="book">
+
+                <div class="cover">
+                    <h3>
+                        UNKNOWN<br>
+                        UNIVERSE
+                    </h3>
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Unknown Universe</h3>
+
+                    <p>
+                        A journey beyond Earth into
+                        the mysteries of the universe.
+                    </p>
+
+                    <div class="price">
+                        Rp20.000
+                    </div>
+
+                    <button class="buy"
+                        onclick="buyBook('Unknown Universe')">
+                        BUY NOW
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+
+        <h2>About ZHEBST</h2>
+
+        <p>
+            ZHEBST is a digital bookstore focused on
+            bringing interesting stories, knowledge,
+            and ideas into your hands.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 ZHEBST. All rights reserved.
+    </footer>
+
+
+    <script>
+
+        function buyBook(bookName) {
+
+            alert(
+                "Kamu memilih: " + bookName +
+                "\\n\\nSilakan lanjut ke pembayaran."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
